@@ -1,3 +1,5 @@
+configfile: "config.yaml"
+
 rule all:
     input:
         "results/greetings.txt"
@@ -7,7 +9,7 @@ rule helloworld:
         helloworld="code/helloworld.py",
         inputfile="data/names.txt",
     params:
-        sleeptime=0
+        sleeptime=config["sleeptime"]
     output:
         "results/greetings.txt"
     singularity:
