@@ -10,6 +10,7 @@ pip install -r requirements.txt
 ### CLI
 #### Locally
 ```console
+cd helloworld
 snakemake -np  # dry-run
 snakemake -p --cores 1
 cat results/greetings.txt
@@ -17,6 +18,7 @@ cat results/greetings.txt
 #### Container
 ```console
 # singularity must be installed
+cd helloworld
 snakemake -np  # dry-run
 snakemake -p --cores 1 --use-singularity
 cat results/greetings.txt
@@ -25,10 +27,12 @@ cat results/greetings.txt
 ### Python
 #### Locally
 ```console
-python run.py
+cd helloworld
+python ../run.py
 ```
 #### k8s
 ```console
+cd helloworld
 kind create cluster --config kind-config.yaml
-python run_k8s.py
+python ../run_k8s.py
 ```
